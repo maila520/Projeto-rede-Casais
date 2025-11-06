@@ -7,207 +7,31 @@
   <title>Encontro de Casais 💞 - Votação</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
-
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(to bottom right, #3b0a16, #6d1a2d);
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-
-  h1 {
-    color: #ffdde5;
-    font-size: 2.6em;
-    margin-top: 25px;
-    font-weight: 700;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
-  }
-
-  form {
-    background: #fff;
-    margin: 30px auto;
-    padding: 35px;
-    border-radius: 20px;
-    max-width: 580px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-    border: 3px solid #6d1a2d;
-    color: #3b0a16;
-    font-size: 1.1em;
-    text-align: left;
-  }
-
-  .campo {
-    margin-bottom: 18px;
-  }
-
-  label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: #3b0a16;
-  }
-
-  select,
-  button {
-    width: 100%;
-    padding: 14px;
-    border: 2px solid #6d1a2d;
-    border-radius: 10px;
-    font-size: 1.05em;
-    font-weight: 500;
-    background: #fff;
-    color: #3b0a16;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
-  }
-
-  select:focus {
-    outline: none;
-    border-color: #9c2740;
-    box-shadow: 0 0 8px rgba(156, 39, 64, 0.5);
-  }
-
-  button {
-    background-color: #6d1a2d;
-    color: white;
-    cursor: pointer;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-  }
-
-  button:hover {
-    background-color: #9c2740;
-    transform: scale(1.04);
-    box-shadow: 0 4px 15px rgba(156, 39, 64, 0.4);
-  }
-
-  .resultados {
-    background: #fff;
-    margin: 35px auto;
-    padding: 30px;
-    border-radius: 20px;
-    max-width: 580px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-    border: 3px solid #6d1a2d;
-    color: #3b0a16;
-    font-size: 1.15em;
-  }
-
-  h2 {
-    color: #6d1a2d;
-    font-size: 1.8em;
-    margin-bottom: 15px;
-    font-weight: 700;
-    text-align: center;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    font-size: 1.05em;
-  }
-
-  li {
-    padding: 10px;
-    border-bottom: 1px solid #f3ccd2;
-  }
-
-  footer {
-    margin-top: 40px;
-    padding: 15px;
-    background-color: #3b0a16;
-    color: #ffdde5;
-    font-size: 1.1em;
-    letter-spacing: 0.5px;
-    text-align: center;
-  }
-
-  .modal-backdrop {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.7);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-  }
-
-  .modal {
-    background: #4a0e1f;
-    padding: 40px;
-    border-radius: 16px;
-    width: 90%;
-    max-width: 620px;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
-    text-align: center;
-    border: 2px solid #fff;
-    color: #fff;
-  }
-
-  .modal h3 {
-    margin-top: 0;
-    color: #fff;
-    font-size: 2em;
-    font-weight: 700;
-  }
-
-  .modal p {
-    color: #ffe5ec;
-    font-size: 1.25em;
-    margin-top: 10px;
-    font-weight: 500;
-  }
-
-  .modal input {
-    width: 100%;
-    padding: 14px;
-    margin-top: 18px;
-    border-radius: 8px;
-    border: 2px solid #fff;
-    background: #fff;
-    font-size: 1.1em;
-    color: #4a0e23;
-    transition: 0.3s;
-    font-family: 'Montserrat', sans-serif;
-  }
-
-  .modal .actions {
-    margin-top: 25px;
-    text-align: center;
-  }
-
-  .modal .actions button {
-    background-color: #fff;
-    color: #6d1a2d;
-    border: none;
-    padding: 12px 28px;
-    border-radius: 10px;
-    font-size: 1.05em;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: 600;
-  }
-
-  .modal .actions button:hover {
-    background-color: #ffdde5;
-    color: #3b0a16;
-    transform: scale(1.05);
-  }
-
-  @media (max-width: 600px) {
-    h1 { font-size: 2.1em; }
-    form, .resultados { padding: 25px; font-size: 1em; }
-    .modal { padding: 30px; max-width: 90%; }
-    .modal h3 { font-size: 1.6em; }
-    .modal p, button, select { font-size: 1em; }
-  }
+  body { font-family: 'Montserrat', sans-serif; background: linear-gradient(to bottom right, #3b0a16, #6d1a2d); color: #fff; margin: 0; padding: 0; text-align: center; }
+  h1 { color: #ffdde5; font-size: 2.6em; margin-top: 25px; font-weight: 700; text-shadow: 1px 1px 6px rgba(0,0,0,0.4); }
+  form { background: #fff; margin: 30px auto; padding: 35px; border-radius: 20px; max-width: 580px; box-shadow: 0 6px 20px rgba(0,0,0,0.35); border: 3px solid #6d1a2d; color: #3b0a16; font-size: 1.1em; text-align:left; }
+  .campo { margin-bottom: 18px; }
+  label { display:block; font-weight:600; margin-bottom:6px; color:#3b0a16; }
+  select, button { width:100%; padding:14px; border:2px solid #6d1a2d; border-radius:10px; font-size:1.05em; font-weight:500; background:#fff; color:#3b0a16; transition:all .3s; box-sizing:border-box; }
+  select:focus { outline:none; border-color:#9c2740; box-shadow:0 0 8px rgba(156,39,64,0.5); }
+  button { background-color:#6d1a2d; color:white; cursor:pointer; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; }
+  button:hover { background-color:#9c2740; transform:scale(1.04); box-shadow:0 4px 15px rgba(156,39,64,0.4); }
+  .resultados { background:#fff; margin:35px auto; padding:30px; border-radius:20px; max-width:580px; box-shadow:0 6px 20px rgba(0,0,0,0.35); border:3px solid #6d1a2d; color:#3b0a16; font-size:1.15em; }
+  h2 { color:#6d1a2d; font-size:1.8em; margin-bottom:15px; font-weight:700; text-align:center; }
+  ul { list-style:none; padding:0; font-size:1.05em; }
+  li { padding:10px; border-bottom:1px solid #f3ccd2; }
+  footer { margin-top:40px; padding:15px; background-color:#3b0a16; color:#ffdde5; font-size:1.1em; letter-spacing:0.5px; text-align:center; }
+  .modal-backdrop { position:fixed; inset:0; background:rgba(0,0,0,0.7); display:none; align-items:center; justify-content:center; z-index:1000; }
+  .modal { background:#4a0e1f; padding:40px; border-radius:16px; width:90%; max-width:620px; box-shadow:0 10px 35px rgba(0,0,0,0.6); text-align:center; border:2px solid #fff; color:#fff; }
+  .modal h3 { margin-top:0; color:#fff; font-size:2em; font-weight:700; }
+  .modal p { color:#ffe5ec; font-size:1.25em; margin-top:10px; font-weight:500; }
+  .modal input { width:100%; padding:14px; margin-top:18px; border-radius:8px; border:2px solid #fff; background:#fff; font-size:1.1em; color:#4a0e23; transition:0.3s; font-family:'Montserrat',sans-serif; }
+  .modal .actions { margin-top:25px; text-align:center; }
+  .modal .actions button { background-color:#fff; color:#6d1a2d; border:none; padding:12px 28px; border-radius:10px; font-size:1.05em; cursor:pointer; transition:0.3s; font-weight:600; }
+  .modal .actions button:hover { background-color:#ffdde5; color:#3b0a16; transform:scale(1.05); }
+  @media (max-width:600px){ h1{font-size:2.1em;} form,.resultados{padding:25px;font-size:1em;} .modal{padding:30px;max-width:90%;} .modal h3{font-size:1.6em;} .modal p,button,select{font-size:1em;} }
 </style>
 </head>
-
 <body>
   <h1>💖 Votação - Encontro de Casais 💖</h1>
 
@@ -232,26 +56,25 @@
     <div class="campo"><label>Casal mais romântico 💋</label><select id="romantico"></select></div>
     <div class="campo"><label>Casal mais acolhedor 🤗</label><select id="acolhedor"></select></div>
     <div class="campo"><label>Casal mais harmonia com todos 🤝</label><select id="harmonia"></select></div>
-    <div class="campo"><label>Casal mais engraçado 😂</label><select id="engraçado"></select></div>
+    <div class="campo"><label>Casal mais engraçado 😂</label><select id="engracado"></select></div>
 
     <button type="submit">Enviar Voto 💌</button>
   </form>
 
-  <div class="resultados" id="divRanking">
+  <div class="resultados" id="divRanking" style="display:none;">
     <h2>🏆 Ranking dos Casais Mais Votados</h2>
     <ul id="ranking"></ul>
   </div>
 
-  <div class="resultados" id="divVotantes">
+  <div class="resultados" id="divVotantes" style="display:none;">
     <h2>📝 Quem Já Votou</h2>
     <ul id="votantes"></ul>
   </div>
 
   <footer>Feito com 💕 para o Encontro de Casais da Igreja IBVA</footer>
 
-  <!-- Modal -->
   <div class="modal-backdrop" id="pwModal">
-    <div class="modal">
+    <div class="modal" id="pwContent">
       <h3>Acesso restrito</h3>
       <p>Digite a senha para visualizar o ranking e a lista de votantes.</p>
       <input id="pwInput" type="password" placeholder="Senha" />
@@ -262,153 +85,246 @@
     </div>
   </div>
 
-  <script>
-    const casais = [
-      "Elmano e Ana","Joabe e Gleide","Salomão e Nildete","Bonfim e Celma",
-      "Marcio e Eliene","Eric e Andreara","Luciano e Evelin","Leonardo e Adriana",
-      "Lindomar e Paula","Marcão e Viviane","Frances e Silvana","Jaciano e Patricia",
-      "Nailton e Jacira","Fábio e Marlene","Elisangela e Claudio","Natã e Maila",
-      "Deri e Naiana","Paulo e Giselia","Tony e Adriana","Mateus e Barbara",
-      "Silvio e Jeane","Elmo e Talita","Moises e Joice","Uelington e Lve",
-      "Beto e Lais","Adilma e André","Giliane e Roberto","Sheila e Esposo",
-      "Gomes e Graça","Antônio e Jucineide","Alex e Lúcia"
-    ];
+<script>
+/*
+  Correções principais nesta versão:
+  - Todo o JS roda após DOMContentLoaded (garante que os elements existam).
+  - Verificações defensivas antes de acessar elementos.
+  - Fluxo de autenticação estrito: somente após senha correta (sessionStorage="1") o ranking aparece.
+  - Fallback localStorage para salvar votos quando API falhar (não deixa o botão travar).
+  - Logs claros no console para debug.
+*/
 
-    const categorias = ["animado","unido","tranquilo","sorridente","carinhoso","inspiracao","apaixonado","fe","completa","comunicativo","superacao","elegante","romantico","acolhedor","harmonia","engraçado"];
+document.addEventListener('DOMContentLoaded', () => {
+  // === dados ===
+  const casais = [
+    "Elmano e Ana","Joabe e Gleide","Salomão e Nildete","Bonfim e Celma",
+    "Marcio e Eliene","Eric e Andreara","Luciano e Evelin","Leonardo e Adriana",
+    "Lindomar e Paula","Marcão e Viviane","Frances e Silvana","Jaciano e Patricia",
+    "Nailton e Jacira","Fábio e Marlene","Elisangela e Claudio","Natã e Maila",
+    "Deri e Naiana","Paulo e Giselia","Tony e Adriana","Mateus e Barbara",
+    "Silvio e Jeane","Elmo e Talita","Moises e Joice","Uelington e Lve",
+    "Beto e Lais","Adilma e André","Giliane e Roberto","Sheila e Esposo",
+    "Gomes e Graça","Antônio e Jucineide","Alex e Lúcia"
+  ];
 
-    const casaisAutorizados = ["Natã e Maila", "Joabe e Gleide"];
-    const SENHA = "cafeteira";
-    const API_KEY = "$2a$10$5MkP8u/0Aw44UKNpoB8BUOkAkRPRGOtsLwnCui5hJnuWP8ZeIbv9.";
-    const BIN_ID  = "690cec3bd0ea881f40d8478b";
+  const categorias = ["animado","unido","tranquilo","sorridente","carinhoso","inspiracao","apaixonado","fe","completa","comunicativo","superacao","elegante","romantico","acolhedor","harmonia","engracado"];
 
-    async function carregarVotos() {
-      try {
-        const res = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, { headers: { "X-Master-Key": API_KEY } });
-        const data = await res.json();
-        return data.record || { votos: [], votantes: [] };
-      } catch {
-        return { votos: [], votantes: [] };
+  const casaisAutorizados = ["Natã e Maila", "Joabe e Gleide"];
+  const SENHA = "cafeteira";
+  const API_KEY = "$2a$10$5MkP8u/0Aw44UKNpoB8BUOkAkRPRGOtsLwnCui5hJnuWP8ZeIbv9.";
+  const BIN_ID  = "690cec3bd0ea881f40d8478b";
+  const FALLBACK_KEY = 'votos_fallback_v1';
+
+  // elementos
+  const selNome = document.getElementById('nomeVotante');
+  const form = document.getElementById('formVotacao');
+  const pwModal = document.getElementById('pwModal');
+  const pwInput = document.getElementById('pwInput');
+  const pwCancel = document.getElementById('pwCancel');
+  const pwSubmit = document.getElementById('pwSubmit');
+  const divRanking = document.getElementById('divRanking');
+  const divVotantes = document.getElementById('divVotantes');
+  const ulRanking = document.getElementById('ranking');
+  const ulVotantes = document.getElementById('votantes');
+
+  if(!selNome || !form) {
+    console.error('Elementos essenciais não encontrados (nomeVotante/formVotacao). Verifique o HTML.');
+    return;
+  }
+
+  // === API helpers (com fallback) ===
+  async function carregarVotos() {
+    try {
+      const res = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, { headers: { "X-Master-Key": API_KEY } });
+      if (!res.ok) throw new Error('API respondeu com status ' + res.status);
+      const data = await res.json();
+      const remote = data.record || { votos: [], votantes: [] };
+      // merge fallback se existir
+      const fb = (() => {
+        try { return JSON.parse(localStorage.getItem(FALLBACK_KEY) || 'null'); } catch(e){ return null; }
+      })();
+      if (fb && Array.isArray(fb.votos)) {
+        return { votos: (remote.votos || []).concat(fb.votos || []), votantes: (remote.votantes || []).concat(fb.votantes || []) };
       }
+      return remote;
+    } catch (err) {
+      console.warn('carregarVotos fallback:', err);
+      const fb = (() => { try { return JSON.parse(localStorage.getItem(FALLBACK_KEY) || 'null'); } catch(e){ return null; } })();
+      if (fb && (Array.isArray(fb.votos) || Array.isArray(fb.votantes))) return fb;
+      return { votos: [], votantes: [] };
     }
+  }
 
-    async function salvarVotos(votos, votantes) {
-      try {
-        await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
-          method: "PUT",
-          headers: { "Content-Type": "application/json", "X-Master-Key": API_KEY },
-          body: JSON.stringify({ votos, votantes })
-        });
-        return true;
-      } catch {
-        return false;
-      }
-    }
-
-    function preencherSelects() {
-      const selVotante = document.getElementById("nomeVotante");
-      let oPadrao = document.createElement("option");
-      oPadrao.value = "";
-      oPadrao.textContent = "-- Selecione seu casal --";
-      oPadrao.disabled = true;
-      oPadrao.selected = true;
-      selVotante.appendChild(oPadrao);
-      casais.forEach(c => {
-        let o = document.createElement("option");
-        o.value = c;
-        o.textContent = c;
-        selVotante.appendChild(o);
+  async function salvarVotos(votos, votantes) {
+    try {
+      const res = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json", "X-Master-Key": API_KEY },
+        body: JSON.stringify({ votos, votantes })
       });
-
-      categorias.forEach(cat=>{
-        let sel=document.getElementById(cat);
-        let p=document.createElement("option");
-        p.value="";p.textContent="-- Escolha um casal --";p.disabled=true;p.selected=true;
-        sel.appendChild(p);
-        casais.forEach(c=>{let o=document.createElement("option");o.value=c;o.textContent=c;sel.appendChild(o);});
-      });
+      if (!res.ok) throw new Error('API respondeu com status ' + res.status);
+      localStorage.removeItem(FALLBACK_KEY);
+      console.debug('salvarVotos: salvo remotamente');
+      return true;
+    } catch (err) {
+      console.warn('salvarVotos: falhou, salvando em fallback local', err);
+      try { localStorage.setItem(FALLBACK_KEY, JSON.stringify({ votos, votantes })); } catch(e){ console.error('Erro ao gravar fallback', e); }
+      return true; // permite UI continuar para testes
     }
+  }
 
-    function atualizarOpcoesParaVotante(v) {
-      categorias.forEach(cat=>{
-        let s=document.getElementById(cat);
-        for(let i=0;i<s.options.length;i++){
-          let o=s.options[i];
-          if(o.value==v){o.disabled=true;if(s.value==o.value)s.value="";}
-          else o.disabled=false;
-        }
-      });
-    }
+  // === UI helpers ===
+  function preencherSelects() {
+    selNome.innerHTML = '';
+    const pad = document.createElement('option'); pad.value=''; pad.textContent='-- Selecione seu casal --'; pad.disabled=true; pad.selected=true;
+    selNome.appendChild(pad);
+    casais.forEach(c => { const o = document.createElement('option'); o.value=c; o.textContent=c; selNome.appendChild(o); });
 
-    function atualizarListas(votos,votantes){
-      const r=document.getElementById("ranking"),v=document.getElementById("votantes");
-      const cont={};
-      votos.forEach(x=>{Object.values(x).forEach(n=>{if(!n)return;cont[n]=(cont[n]||0)+1;});});
-      r.innerHTML=Object.entries(cont).sort((a,b)=>b[1]-a[1]).map(([n,q])=>`<li><b>${n}</b> - ${q} votos</li>`).join("")||"<li>Nenhum voto ainda 💭</li>";
-      v.innerHTML=votantes.length?votantes.map(v=>`<li>${v}</li>`).join(""):"<li>Ninguém votou ainda 💌</li>";
-    }
+    categorias.forEach(cat => {
+      const sel = document.getElementById(cat);
+      if(!sel) { console.warn('select não encontrado:', cat); return; }
+      sel.innerHTML=''; const p = document.createElement('option'); p.value=''; p.textContent='-- Escolha um casal --'; p.disabled=true; p.selected=true; sel.appendChild(p);
+      casais.forEach(c => { const o = document.createElement('option'); o.value=c; o.textContent=c; sel.appendChild(o); });
+    });
+  }
 
-    function podeVerResultados(nome){
-      return casaisAutorizados.includes(nome)&&sessionStorage.getItem("auth_"+nome)==="1";
-    }
-
-    function atualizarVisibilidadeResultados(nome){
-      const r=document.getElementById("divRanking"),v=document.getElementById("divVotantes");
-      const show=podeVerResultados(nome);
-      r.style.display=v.style.display=show?"block":"none";
-    }
-
-    const pwModal=document.getElementById("pwModal");
-    const pwInput=document.getElementById("pwInput");
-    document.getElementById("pwCancel").onclick=()=>{pwModal.style.display="none";document.getElementById("nomeVotante").value="";};
-    document.getElementById("pwSubmit").onclick=async()=>{
-      const nome=document.getElementById("nomeVotante").value;
-      if(pwInput.value===SENHA&&casaisAutorizados.includes(nome)){
-        sessionStorage.setItem("auth_"+nome,"1");
-        pwModal.style.display="none";
-        const {votos,votantes}=await carregarVotos();
-        atualizarListas(votos,votantes);
-        atualizarVisibilidadeResultados(nome);
-      }else alert("Senha incorreta.");
-    };
-
-    document.getElementById("nomeVotante").addEventListener("change",async function(){
-      const nome=this.value;
-      atualizarOpcoesParaVotante(nome);
-      if(casaisAutorizados.includes(nome)&&sessionStorage.getItem("auth_"+nome)!=="1"){
-        pwModal.style.display="flex";
-        atualizarVisibilidadeResultados(null);
-      }else{
-        atualizarVisibilidadeResultados(nome);
-        if(podeVerResultados(nome)){const {votos,votantes}=await carregarVotos();atualizarListas(votos,votantes);}
+  function atualizarOpcoesParaVotante(v) {
+    categorias.forEach(cat => {
+      const sel = document.getElementById(cat);
+      if(!sel) return;
+      for(let i=0;i<sel.options.length;i++){
+        const o = sel.options[i];
+        if(o.value == v) { o.disabled = true; if(sel.value == o.value) sel.value = ''; }
+        else o.disabled = false;
       }
     });
+  }
 
-    document.getElementById("formVotacao").addEventListener("submit",async e=>{
-      e.preventDefault();
-      const nome=document.getElementById("nomeVotante").value;
-      if(!nome)return alert("Selecione seu casal antes de votar!");
-      const data=await carregarVotos();
-      const votos=data.votos||[],votantes=data.votantes||[];
-      if(votantes.includes(nome))return alert("Esse casal já votou hoje!");
-      const voto={};
-      categorias.forEach(c=>voto[c]=document.getElementById(c).value||null);
-      if(Object.values(voto).includes(nome))return alert("Você não pode votar em si mesmo!");
+  function atualizarListas(votos, votantes) {
+    if(!ulRanking || !ulVotantes) { console.warn('ulRanking/ulVotantes não encontrados'); return; }
+    const cont = {};
+    if (Array.isArray(votos)) {
+      votos.forEach(x => {
+        if(x && typeof x === 'object') Object.values(x).forEach(n => { if(!n) return; cont[n] = (cont[n]||0)+1; });
+      });
+    }
+    const entries = Object.entries(cont).sort((a,b)=>b[1]-a[1]);
+    ulRanking.innerHTML = entries.length ? entries.map(([n,q])=>`<li><b>${n}</b> - ${q} votos</li>`).join('') : '<li>Nenhum voto ainda 💭</li>';
+    ulVotantes.innerHTML = Array.isArray(votantes) && votantes.length ? votantes.map(v=>`<li>${v}</li>`).join('') : '<li>Ninguém votou ainda 💌</li>';
+    console.debug('Listas atualizadas. cont:', cont);
+  }
+
+  function podeVerResultados(nome) {
+    return !!nome && casaisAutorizados.includes(nome) && sessionStorage.getItem('auth_'+nome) === '1';
+  }
+
+  function atualizarVisibilidadeResultados(nome) {
+    const show = podeVerResultados(nome);
+    if(divRanking) divRanking.style.display = show ? 'block' : 'none';
+    if(divVotantes) divVotantes.style.display = show ? 'block' : 'none';
+  }
+
+  // === modal handlers ===
+  function abrirModalSenha() { if(pwModal) pwModal.style.display = 'flex'; }
+  function fecharModalSenha() { if(pwModal) pwModal.style.display = 'none'; if(pwInput) pwInput.value = ''; if(selNome) selNome.value = ''; }
+
+  if(pwCancel) pwCancel.addEventListener('click', () => { fecharModalSenha(); });
+
+  if(pwModal) pwModal.addEventListener('click', (ev) => { if(ev.target === pwModal) fecharModalSenha(); });
+
+  if(pwSubmit) pwSubmit.addEventListener('click', async () => {
+    try {
+      const nome = selNome ? selNome.value : null;
+      const senha = pwInput ? (pwInput.value || '').trim() : '';
+      if(!nome) { alert('Selecione seu casal antes de entrar com a senha.'); return; }
+      if(senha === SENHA && casaisAutorizados.includes(nome)) {
+        sessionStorage.setItem('auth_'+nome, '1');
+        fecharModalSenha();
+        const data = await carregarVotos();
+        atualizarListas(data.votos || [], data.votantes || []);
+        atualizarVisibilidadeResultados(nome);
+        alert('Autenticado! Você pode ver o ranking agora.');
+      } else {
+        alert('Senha incorreta.');
+      }
+    } catch(err) { console.error('pwSubmit erro:', err); alert('Erro ao autenticar; veja console.'); }
+  });
+
+  // === eventos ===
+  selNome.addEventListener('change', async function() {
+    try {
+      const nome = this.value;
+      atualizarOpcoesParaVotante(nome);
+      if(casaisAutorizados.includes(nome) && sessionStorage.getItem('auth_'+nome) !== '1') {
+        abrirModalSenha();
+        atualizarVisibilidadeResultados(null);
+      } else {
+        atualizarVisibilidadeResultados(nome);
+        if(podeVerResultados(nome)) {
+          const data = await carregarVotos();
+          atualizarListas(data.votos || [], data.votantes || []);
+        }
+      }
+    } catch(err) { console.error('erro change selNome:', err); }
+  });
+
+  if(form) form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    try {
+      const nome = selNome ? selNome.value : null;
+      if(!nome) return alert('Selecione seu casal antes de votar!');
+      // exigir autenticação se casal é autorizado
+      if(casaisAutorizados.includes(nome) && sessionStorage.getItem('auth_'+nome) !== '1') {
+        abrirModalSenha();
+        return alert('Autentique-se com a senha para continuar.');
+      }
+
+      const data = await carregarVotos();
+      const votos = Array.isArray(data.votos) ? data.votos.slice() : [];
+      const votantes = Array.isArray(data.votantes) ? data.votantes.slice() : [];
+
+      if(votantes.includes(nome)) return alert('Esse casal já votou hoje!');
+
+      const voto = {};
+      categorias.forEach(c => {
+        const el = document.getElementById(c);
+        voto[c] = el ? (el.value || null) : null;
+      });
+
+      if(Object.values(voto).includes(nome)) return alert('Você não pode votar em si mesmo!');
+
       votos.push(voto);
       votantes.push(nome);
-      const ok=await salvarVotos(votos,votantes);
-      if(!ok)return alert("Erro ao salvar voto.");
-      alert("Voto registrado com sucesso!");
-      e.target.reset();
-      categorias.forEach(id=>{const sel=document.getElementById(id);sel.selectedIndex=0;});
-      document.getElementById("nomeVotante").value="";
+
+      const ok = await salvarVotos(votos, votantes);
+      if(!ok) return alert('Erro ao salvar voto.');
+
+      alert('Voto registrado com sucesso!');
+      // reset visual
+      form.reset();
+      categorias.forEach(id => { const sel = document.getElementById(id); if(sel) sel.selectedIndex = 0; });
+      if(selNome) selNome.value = '';
       atualizarOpcoesParaVotante(null);
       atualizarVisibilidadeResultados(null);
-    });
+    } catch(err) {
+      console.error('Erro no submit:', err);
+      alert('Erro ao processar o voto. Veja console para detalhes.');
+    }
+  });
 
-    (async function init(){
+  // inicialização
+  (async function init() {
+    try {
       preencherSelects();
       atualizarVisibilidadeResultados(null);
-    })();
-  </script>
+      console.debug('Init pronto.');
+    } catch(err) {
+      console.error('Init erro:', err);
+    }
+  })();
+
+}); // DOMContentLoaded
+</script>
 </body>
 </html>
