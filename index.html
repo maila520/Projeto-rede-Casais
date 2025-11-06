@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encontro de Casais 💞 - Votação</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to bottom right, #4a0e23, #7b1e3a);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  h1 {
+    color: #ffd6e0;
+    font-size: 3em;
+    margin-top: 30px;
+    font-weight: 700;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+  }
+
+  form {
+    background: #fff;
+    margin: 40px auto;
+    padding: 45px 40px;
+    border-radius: 25px;
+    max-width: 700px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+    border: 3px solid #7b1e3a;
+    color: #4a0e23;
+    font-size: 1.4em;
+  }
+
+  select,
+  button {
+    width: 90%;
+    margin: 14px 0;
+    padding: 18px;
+    border: 2px solid #7b1e3a;
+    border-radius: 12px;
+    font-size: 1.3em;
+    background: #fff;
+    color: #4a0e23;
+    transition: all 0.3s ease;
+  }
+
+  select:focus {
+    outline: none;
+    border-color: #a83256;
+    box-shadow: 0 0 10px rgba(168, 50, 86, 0.5);
+  }
+
+  button {
+    background-color: #7b1e3a;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 1.4em;
+    transition: all 0.3s ease;
+    border: none;
+  }
+
+  button:hover {
+    background-color: #a83256;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(168, 50, 86, 0.4);
+  }
+
+  .resultados {
+    background: #fff;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 25px;
+    max-width: 700px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+    border: 3px solid #7b1e3a;
+    color: #4a0e23;
+    font-size: 1.4em;
+  }
+
+  h2 {
+    color: #7b1e3a;
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.3em;
+  }
+
+  li {
+    padding: 12px;
+    border-bottom: 1px solid #f3ccd2;
+  }
+
+  footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #3a0d1f;
+    color: #ffd6e0;
+    font-size: 1.3em;
+    letter-spacing: 0.5px;
+  }
+
+  /* === Modal === */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  .modal {
+    background: #7b1e3a;
+    padding: 60px 55px;
+    border-radius: 25px;
+    width: 95%;
+    max-width: 850px; /* ficou bem mais largo */
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    border: 4px solid #fff;
+    color: #fff;
+  }
+
+  .modal h3 {
+    margin-top: 0;
+    color: #fff;
+    font-size: 2.6em;
+    font-weight: 700;
+  }
+
+  .modal p {
+    color: #ffe5ec;
+    font-size: 1.6em;
+    margin-top: 12px;
+    font-weight: 500;
+  }
+
+  .modal input {
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 12px;
+    border: 3px solid #fff;
+    background: #fff;
+    font-size: 1.5em;
+    color: #4a0e23;
+    transition: 0.3s;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .modal input:focus {
+    outline: none;
+    border-color: #ffd6e0;
+    box-shadow: 0 0 10px rgba(255, 214, 224, 0.5);
+  }
+
+  .modal .actions {
+    margin-top: 35px;
+    text-align: right;
+  }
+
+  .modal .actions button {
+    background-color: #fff;
+    color: #7b1e3a;
+    border: none;
+    padding: 16px 35px;
+    border-radius: 10px;
+    font-size: 1.4em;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 700;
+  }
+
+  .modal .actions button:hover {
+    background-color: #ffd6e0;
+    color: #4a0e23;
+    transform: scale(1.05);
+  }
+
+  /* 💖 Toque romântico e acolhedor */
+  form,
+  .resultados,
+  .modal {
+    position: relative;
+  }
+
+  form::before,
+  .resultados::before {
+    content: "💖";
+    position: absolute;
+    font-size: 1.8em;
+    top: 12px;
+    right: 18px;
+    opacity: 0.3;
+  }
+
+  .modal::before {
+    content: "❤️";
+    position: absolute;
+    font-size: 3.5em;
+    top: 15px;
+    left: 20px;
+    opacity: 0.15;
+  }
+</style>
+
+</head>
+
+<body>
+  <h1>💖 Votação - Encontro de Casais 💖</h1>
+  <form id="formVotacao">
+    <label>Selecione seu casal 💑</label>
+    <select id="nomeVotante" required>
+      <option value="">-- Selecione seu casal --</option>
+    </select>
+
+    <label>Casal mais animado 😂</label>
+    <select id="animado"></select>
+    <label>Casal mais unido em tudo 🤝</label>
+    <select id="unido"></select>
+    <label>Casal mais tranquilo e sereno 😌</label>
+    <select id="tranquilo"></select>
+    <label>Casal mais sorridente 😄</label>
+    <select id="sorridente"></select>
+    <label>Casal mais carinhoso 💞</label>
+    <select id="carinhoso"></select>
+    <label>Casal mais inspirador 🌟</label>
+    <select id="inspiracao"></select>
+    <label>Casal mais apaixonado 💞</label>
+    <select id="apaixonado"></select>
+    <label>Casal que mais demonstra fé 🙏</label>
+    <select id="fe"></select>
+    <label>Casal que mais se completa ❤️</label>
+    <select id="completa"></select>
+    <label>Casal mais comunicativo 🗣️</label>
+    <select id="comunicativo"></select>
+    <label>Casal superação(venceu desafios juntos) 💪</label>
+    <select id="superacao"></select>
+    <label>Casal mais elegante 💃🕺</label>
+    <select id="elegante"></select>
+    <label>Casal mais romantico 💞</label>
+    <select id="romantico"></select>
+    <label>Casal mais acolhedor 🤗</label>
+    <select id="acolhedor"></select>
+    <label>Casal mais harmonia com todos 🤝</label>
+    <select id="harmonia"></select>
+    <label>Casal mais engraçado 😂</label>
+    <select id="engraçado"></select>
+
+    <button type="submit">Enviar Voto 💌</button>
+  </form>
+
+  <div class="resultados" id="divRanking">
+    <h2>🏆 Ranking dos Casais Mais Votados</h2>
+    <ul id="ranking"></ul>
+  </div>
+
+  <div class="resultados" id="divVotantes">
+    <h2>📝 Quem Já Votou</h2>
+    <ul id="votantes"></ul>
+  </div>
+
+  <footer>Feito com 💕 para o Encontro de Casais da Igreja IBVA</footer>
+
+  <!-- Modal de senha -->
+  <div class="modal-backdrop" id="pwModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="pwTitle">
+      <h3 id="pwTitle">Acesso restrito</h3>
+      <p>Digite a senha para visualizar o ranking e a lista de votantes.</p>
+      <input id="pwInput" type="password" placeholder="Senha" />
+      <div class="actions">
+        <button id="pwCancel" type="button">Cancelar</button>
+        <button id="pwSubmit" type="button">Entrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* === Dados e configuração === */
+    const casais = [
+      "Elmano e Ana", "Joabe e Gleide", "Salomão e Nildete", "Bonfim e Celma",
+      "Marcio e Eliene", "Eric e Andreara", "Luciano e Evelin", "Leonardo e Adriana",
+      "Lindomar e Paula", "Marcão e Viviane", "Frances e Silvana", "Jaciano e Patricia",
+      "Nailton e Jacira", "Fábio e Marlene", "Elisangela e Claudio", "Natã e Maila",
+      "Deri e Naiana", "Paulo e Giselia", "Tony e Adriana", "Mateus e Barbara",
+      "Silvio e Jeane", "Elmo e Talita", "Moises e Joice", "Uelington e Lve",
+      "Beto e Lais", "Adilma e André", "Giliane e Roberto", "Sheila e Esposo",
+      "Gomes e Graça", "Antônio e Jucineide", "Alex e Lúcia"
+    ];
+
+    // IDs dos selects (devem estar iguais ao HTML)
+    const categorias = ["animado","unido","tranquilo","sorridente","carinhoso","inspiracao","apaixonado","fe","completa","comunicativo","superacao","elegante","romantico","acolhedor","harmonia","engraçado"];
+
+    // agora apenas estes dois casais têm permissão, mas exigirão senha:
+    const casaisAutorizados = ["Natã e Maila", "Joabe e Gleide"];
+
+    // senha exigida (exata)
+    const SENHA = "cafeteira";
+
+    // JSONBin config (mantenha suas credenciais)
+    const API_KEY = "$2a$10$5MkP8u/0Aw44UKNpoB8BUOkAkRPRGOtsLwnCui5hJnuWP8ZeIbv9.";
+    const BIN_ID  = "690cec3bd0ea881f40d8478b";
+
+    /* === Funções JSONBin (como antes) === */
+    async function carregarVotos() {
+      try {
+        const res = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+          headers: { "X-Master-Key": API_KEY }
+        });
+        const data = await res.json();
+        return data.record || { votos: [], votantes: [] };
+      } catch (err) {
+        console.error("Erro carregarVotos:", err);
+        return { votos: [], votantes: [] };
+      }
+    }
+
+    async function salvarVotos(votos, votantes) {
+      try {
+        const res = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Master-Key": API_KEY
+          },
+          body: JSON.stringify({ votos, votantes })
+        });
+        return res.ok;
+      } catch (err) {
+        console.error("Erro salvarVotos:", err);
+        return false;
+      }
+    }
+
+    /* === Preenche selects === */
+    function preencherSelects() {
+      const selectVotante = document.getElementById("nomeVotante");
+      casais.forEach(casal => {
+        const op = document.createElement("option");
+        op.value = casal; op.textContent = casal;
+        selectVotante.appendChild(op);
+      });
+
+      categorias.forEach(cat => {
+        const select = document.getElementById(cat);
+        const placeholder = document.createElement("option");
+        placeholder.value = ""; placeholder.textContent = "-- Escolha um casal --";
+        placeholder.disabled = true; placeholder.selected = true;
+        select.appendChild(placeholder);
+
+        casais.forEach(casal => {
+          const op = document.createElement("option");
+          op.value = casal; op.textContent = casal;
+          select.appendChild(op);
+        });
+      });
+    }
+
+    /* === Atualiza ranking e votantes na tela === */
+    function atualizarListas(votos, votantes) {
+      const rankingEl = document.getElementById("ranking");
+      const votantesEl = document.getElementById("votantes");
+      const contagem = {};
+      votos.forEach(v => {
+        Object.values(v).forEach(nome => {
+          if (!nome) return;
+          contagem[nome] = (contagem[nome] || 0) + 1;
+        });
+      });
+      const rankingHtml = Object.entries(contagem)
+        .sort((a,b)=>b[1]-a[1])
+        .map(([n,q])=>`<li><b>${n}</b> - ${q} votos</li>`).join("");
+      rankingEl.innerHTML = rankingHtml || "<li>Nenhum voto ainda 💭</li>";
+      votantesEl.innerHTML = votantes.length ? votantes.map(v => `<li>${v}</li>`).join("") : "<li>Ninguém votou ainda 💌</li>";
+    }
+
+    /* === Controle de visibilidade dos blocos de resultados === */
+    function podeVerResultados(nomeVotante) {
+      if (!nomeVotante) return false;
+      if (!casaisAutorizados.includes(nomeVotante)) return false;
+      // verificar se já autenticou nesta sessão
+      return sessionStorage.getItem("auth_" + nomeVotante) === "1";
+    }
+
+    function atualizarVisibilidadeResultados(nomeVotante) {
+      const divRanking = document.getElementById("divRanking");
+      const divVotantes = document.getElementById("divVotantes");
+      const mostra = podeVerResultados(nomeVotante);
+      divRanking.style.display = mostra ? "block" : "none";
+      divVotantes.style.display = mostra ? "block" : "none";
+    }
+
+    /* === Impedir que o casal vote em si mesmo (desabilitar opções) === */
+    function atualizarOpcoesParaVotante(votanteSelecionado) {
+      categorias.forEach(catId => {
+        const select = document.getElementById(catId);
+        if (!select) return;
+        for (let i = 0; i < select.options.length; i++) {
+          const opt = select.options[i];
+          if (opt.value === "") continue;
+          if (votanteSelecionado && opt.value === votanteSelecionado) {
+            opt.disabled = true;
+            if (select.value === opt.value) select.value = "";
+          } else {
+            opt.disabled = false;
+          }
+        }
+      });
+    }
+
+    /* === Modal senha === */
+    const pwModal = document.getElementById("pwModal");
+    const pwInput = document.getElementById("pwInput");
+    const pwSubmit = document.getElementById("pwSubmit");
+    const pwCancel = document.getElementById("pwCancel");
+
+    function showPasswordModal() {
+      pwInput.value = "";
+      pwModal.style.display = "flex";
+      pwInput.focus();
+    }
+    function hidePasswordModal() {
+      pwModal.style.display = "none";
+    }
+
+    pwCancel.addEventListener("click", () => {
+      hidePasswordModal();
+      // opcional: limpa seleção para evitar confusão
+      document.getElementById("nomeVotante").value = "";
+      atualizarOpcoesParaVotante(null);
+      atualizarVisibilidadeResultados(null);
+    });
+
+    pwSubmit.addEventListener("click", () => {
+      const nomeSelecionado = document.getElementById("nomeVotante").value;
+      const senha = pwInput.value;
+      if (senha === SENHA && casaisAutorizados.includes(nomeSelecionado)) {
+        // marca como autenticado nesta sessão
+        sessionStorage.setItem("auth_" + nomeSelecionado, "1");
+        hidePasswordModal();
+        atualizarVisibilidadeResultados(nomeSelecionado);
+        // buscar dados e atualizar tela
+        (async () => {
+          const { votos, votantes } = await carregarVotos();
+          atualizarListas(votos, votantes);
+        })();
+      } else {
+        alert("Senha incorreta.");
+      }
+    });
+
+    /* Quando muda o votante selecionado */
+    document.getElementById("nomeVotante").addEventListener("change", async function() {
+      const votante = this.value || null;
+      atualizarOpcoesParaVotante(votante);
+
+      // Se o votante é um dos autorizados e ainda não autenticado -> pedir senha
+      if (casaisAutorizados.includes(votante) && sessionStorage.getItem("auth_" + votante) !== "1") {
+        // mostrar modal pedindo senha
+        showPasswordModal();
+        // garantir resultados ocultos até autenticação
+        atualizarVisibilidadeResultados(null);
+      } else {
+        // atualizar visibilidade conforme sessão
+        atualizarVisibilidadeResultados(votante);
+        // se já pode ver, atualizar listas com dados do servidor
+        if (podeVerResultados(votante)) {
+          const { votos, votantes } = await carregarVotos();
+          atualizarListas(votos, votantes);
+        }
+      }
+    });
+
+    /* === Envio do formulário === */
+    document.getElementById("formVotacao").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const nome = document.getElementById("nomeVotante").value;
+      if (!nome) return alert("Selecione seu casal antes de votar! 💑");
+
+      // carregar dados atuais
+      const data = await carregarVotos();
+      const votos = Array.isArray(data.votos) ? data.votos : [];
+      const votantes = Array.isArray(data.votantes) ? data.votantes : [];
+
+      if (votantes.includes(nome)) return alert("Esse casal já votou hoje! 💞");
+
+      const voto = {
+        engraçado: document.getElementById("engraçado").value || null,
+        comunicativo: document.getElementById("comunicativo").value || null,
+        romantico: document.getElementById("romantico").value || null,
+        harmonia: document.getElementById("harmonia").value || null,
+        animado: document.getElementById("animado").value || null,
+        unido: document.getElementById("unido").value || null,
+        tranquilo: document.getElementById("tranquilo").value || null,
+        sorridente: document.getElementById("sorridente").value || null,
+        carinhoso: document.getElementById("carinhoso").value || null,
+        inspiracao: document.getElementById("inspiração").value || null,
+        apaixonado: document.getElementById("apaixonado").value || null,
+        fe: document.getElementById("fé").value || null,
+        completa: document.getElementById("completa").value || null,
+        superacao: document.getElementById("superação").value || null,
+        elegante: document.getElementById("elegante").value || null,
+        acolhedor: document.getElementById("acolhedor").value || null,
+        ts: new Date().toISOString()
+      };
+
+      // validação: não pode votar em si mesmo
+      if (Object.values(voto).includes(nome)) {
+        return alert("Você não pode votar no próprio casal! 💔 Escolha outros casais.");
+      }
+
+      votos.push(voto);
+      votantes.push(nome);
+
+      const ok = await salvarVotos(votos, votantes);
+      if (!ok) {
+        return alert("Erro ao salvar o voto. Tente novamente mais tarde.");
+      }
+
+      alert("Voto registrado com sucesso! 💖");
+      this.reset();
+      atualizarOpcoesParaVotante(null);
+
+      // atualizar listas — caso o atual selecionado possa ver (já autenticado), atualizar
+      const current = document.getElementById("nomeVotante").value;
+      if (podeVerResultados(current)) {
+        const fresh = await carregarVotos();
+        atualizarListas(fresh.votos, fresh.votantes);
+      } else {
+        // se não pode ver, garantir resultados ocultos
+        atualizarVisibilidadeResultados(null);
+      }
+    });
+
+    /* === Inicialização: preencher selects e carregar dados iniciais (sem mostrar) === */
+    (async function init() {
+      preencherSelects();
+      atualizarOpcoesParaVotante(null);
+      atualizarVisibilidadeResultados(null);
+      // carregar e preparar listas (dados iniciais) — não mostrados até autenticação
+      const { votos, votantes } = await carregarVotos();
+      // atualiza listas internas (útil quando autenticarem)
+      // não exibimos ainda; quando autenticado, carregamos de novo
+      // mas vamos atualizar a UI caso alguem já esteja autenticado em sessão:
+      const nomeAtivo = document.getElementById("nomeVotante").value || null;
+      if (podeVerResultados(nomeAtivo)) {
+        atualizarListas(votos, votantes);
+        atualizarVisibilidadeResultados(nomeAtivo);
+      }
+    })();
+  </script>
+</body>
+</html>
